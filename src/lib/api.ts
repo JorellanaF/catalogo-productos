@@ -3,6 +3,8 @@ import type { Category } from "@/types/category";
 
 const BASE_URL = process.env.FAKESTORE_API_URL ?? "https://fakestoreapi.com";
 
+// FakeStore responde 200 con cuerpo vacío cuando el ID no existe
+// Por eso se verifica como texto antes de convertir a JSON
 async function get<T>(path: string): Promise<T | null> {
   const res = await fetch(`${BASE_URL}/${path}`, {
     next: { revalidate: 3600 },
