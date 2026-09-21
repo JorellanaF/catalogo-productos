@@ -7,6 +7,20 @@ interface ProductCardProps {
   product: Product;
 }
 
+export function ProductCardSkeleton() {
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
+      <div className="h-48 animate-pulse bg-slate-100" />
+      <div className="flex flex-col gap-3 border-t border-slate-100 p-4">
+        <div className="h-3 w-20 animate-pulse rounded bg-slate-200" />
+        <div className="h-4 w-full animate-pulse rounded bg-slate-200" />
+        <div className="h-3 w-16 animate-pulse rounded bg-slate-200" />
+        <div className="mt-4 h-6 w-24 animate-pulse rounded bg-slate-200" />
+      </div>
+    </div>
+  );
+}
+
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
