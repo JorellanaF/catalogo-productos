@@ -38,9 +38,9 @@ export default async function ProductPage({
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <Link
         href="/"
-        className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+        className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 hover:text-indigo-700"
       >
-        Volver al catálogo
+        <span aria-hidden="true">←</span> Volver al catálogo
       </Link>
 
       <div className="mt-6 grid gap-8 lg:grid-cols-2">
@@ -56,9 +56,12 @@ export default async function ProductPage({
         </div>
 
         <div>
-          <p className="text-xs uppercase tracking-wide text-slate-500">
+          <Link
+            href={`/?categoria=${encodeURIComponent(product.category)}`}
+            className="inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium uppercase tracking-wide text-indigo-700 hover:bg-indigo-100"
+          >
             {product.category}
-          </p>
+          </Link>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
             {product.title}
           </h1>
