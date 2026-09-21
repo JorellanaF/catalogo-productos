@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Catálogo",
+  title: {
+    default: "Catálogo de productos",
+    template: "%s | Catálogo de productos",
+  },
   description: "Catálogo de productos alimentado por Fake Store API",
 };
 
