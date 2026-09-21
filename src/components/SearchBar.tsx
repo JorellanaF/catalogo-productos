@@ -11,6 +11,9 @@ export function SearchBar() {
 
   // Espera 300 ms tras la última tecla para no escribir en la URL en cada pulsación
   useEffect(() => {
+    if (value.trim() === (searchParams.get("q") ?? "")) {
+      return;
+    }
     const timer = setTimeout(() => {
       const params = new URLSearchParams(searchParams.toString());
       if (value.trim()) {
